@@ -1,0 +1,14 @@
+[Unit]
+Description=CPU temperature logger
+After=time-sync.target
+Wants=time-sync.target
+
+[Service]
+User=joshbruce1107
+WorkingDirectory=/home/joshbruce1107/logger
+ExecStart=/usr/bin/python3 /home/joshbruce1107/logger/logger.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
